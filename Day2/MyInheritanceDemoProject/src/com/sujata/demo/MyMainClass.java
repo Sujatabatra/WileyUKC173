@@ -10,6 +10,9 @@ public class MyMainClass {
 		
 		System.out.println("=======================");
 		
+		Sports sports=new Sports();
+		sports.input(222, "Anisha","Cricket");
+		sports.displayStudentWithSportsDetails();
 
 	}
 

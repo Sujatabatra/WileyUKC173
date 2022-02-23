@@ -14,6 +14,12 @@ public class NewMain {
 		Marks marks=new Marks();
 		marks.input(222, "ABC", 78, 89, 67);
 		marks.displayStudentWithMarks();
+		
+		System.out.println("===================");
+		
+		Grade grade=new Grade();
+		grade.input(123, "MNO", 66, 90, 88);
+		grade.displayAllDetails();
 
 	}
 

@@ -11,6 +11,9 @@ public class Marks extends Student {
 	
 	public void input(int rollNo,String name,int marks1,int marks2,int marks3) {
 		input(rollNo, name);
+		this.marks1=marks1;
+		this.marks2=marks2;
+		this.marks3=marks3;
 	}
 	
 	public void displayStudentWithMarks() {
