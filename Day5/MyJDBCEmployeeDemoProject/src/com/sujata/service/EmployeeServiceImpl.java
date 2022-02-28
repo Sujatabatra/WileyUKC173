@@ -15,4 +15,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeDao.getEmployeeList();
 	}
 
+	@Override
+	public boolean saveEmployee(Employee employee) {
+		int rows=employeeDao.insertRecord(employee);
+		if(rows>0)
+			return true;
+		return false;
+	}
+
+	@Override
+	public Employee getEmployeeById(int id) {
+		
+		return employeeDao.getRecordById(id);
+	}
+
 }
