@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- Setter Injection -->
+	<bean id="mrng" class="com.sujata.producer.GoodMorning">
+		<property name="name" value="Lili"></property>
+	</bean>
+	
+	<!-- Constructor Injection -->
+	<bean id="eve" class="com.sujata.producer.GoodEvening">
+		<constructor-arg name="name" value="Sean"></constructor-arg>
+	</bean>
+
+</beans>
