@@ -1,0 +1,17 @@
+Steps for JDBC project
+1. Create Java Project
+2. Right Click on the project >> configure >> convert to maven project
+3. open pom.xml and add following tags
+<dependencies>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.28</version>
+		</dependency>
+		
+
+	</dependencies>
+4. Save The project
+5. create seperate packages for entities, persistence layer, service layer , presentation layer and client
+6. every layer must have top level interface.
