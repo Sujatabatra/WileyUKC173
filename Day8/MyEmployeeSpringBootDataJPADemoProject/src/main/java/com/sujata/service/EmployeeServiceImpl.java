@@ -67,4 +67,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return null;
 	}
 
+	@Override
+	public boolean updateEmployee(int id, int salary) {
+		int rows=employeeDao.updateEmployeeSalaryById(id, salary);
+		if(rows>0)
+			return true;
+		return false;
+	}
+
 }

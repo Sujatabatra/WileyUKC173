@@ -33,7 +33,8 @@ public class EmployeePresentationImpl implements EmployeePresentation {
 		System.out.println("2. Search Employee By ID");
 		System.out.println("3. Insert New Employee ");
 		System.out.println("4. Generate Payslip of an Employee ");
-		System.out.println("5. Exit");
+		System.out.println("5. Update Employee Salary");
+		System.out.println("6. Exit");
 		System.out.println("==============================");
 
 	}
@@ -88,6 +89,16 @@ public class EmployeePresentationImpl implements EmployeePresentation {
 				System.out.println("Employee with id "+empId+" does not exist!");
 			break;
 		case 5:
+			System.out.println("Enter Employee Id : ");
+			int eId=scanner.nextInt();
+			System.out.println("Enter new Salary : ");
+			int eSal=scanner.nextInt();
+			if(employeeService.updateEmployee(eId, eSal))
+				System.out.println("Employee Salary Updation Sucessful!");
+			else
+				System.out.println("Employee Salary Updation Failed!");
+			break;
+		case 6:
 			System.out.println("Thanks for using Employee Management System!");
 			System.exit(0);
 		default:

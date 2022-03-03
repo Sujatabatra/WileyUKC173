@@ -11,4 +11,5 @@ public interface EmployeeService {
 	boolean saveEmployee(Employee employee);
 	Employee getEmployeeById(int id);
 	EmployeePayslip generateSalary(int empId);
+	boolean updateEmployee(int id,int salary);
 }
