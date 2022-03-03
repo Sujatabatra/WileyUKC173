@@ -1,6 +1,7 @@
 package com.sujata.demo;
 
 import java.util.List;
+import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +13,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.sujata.entity.Employee;
 import com.sujata.persistence.EmployeeDao;
+import com.sujata.presentation.EmployeePresentation;
+
 
 @SpringBootApplication(scanBasePackages = "com.sujata")
 @EntityScan(basePackages = "com.sujata.entity")
@@ -20,7 +23,7 @@ public class MyEmployeeSpringBootDataJpaDemoProjectApplication implements Comman
 
 	
 	@Autowired
-	private EmployeeDao employeeDao;
+	private EmployeePresentation employeePresentation;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(MyEmployeeSpringBootDataJpaDemoProjectApplication.class, args);
@@ -28,10 +31,14 @@ public class MyEmployeeSpringBootDataJpaDemoProjectApplication implements Comman
 
 	@Override
 	public void run(String... args) throws Exception {
-		List<Employee> empList= employeeDao.findAll();
-		for(Employee employee:empList) {
-			System.out.println(employee);
+		Scanner scanner = new Scanner(System.in);
+		while (true) {
+			employeePresentation.showMenu();
+			System.out.println("Enter Choice : ");
+			int choice = scanner.nextInt();
+			employeePresentation.performMenu(choice);
 		}
+		
 	}
 
 }
