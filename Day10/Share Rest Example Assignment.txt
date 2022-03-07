@@ -1,0 +1,36 @@
+Share-Service
+
+public class Share {
+	private int shareId;(Primary Key)
+	private String shareName;
+	private double marketPrice;
+}
+
+Rest API:
+GET : /shares/:shareId
+============================================================================
+Customer-Service
+
+public class Customer {
+
+	
+	private int detailId;(Primary Key)
+	private String customerId;
+	private int shareId;
+	private String shareType;
+	private int quantity;
+	
+}
+GET : /customers/:customerId
+============================================================================
+Customer-Details-Service
+public class CustomerDetails {
+
+	private String customerId;
+	private String shareName;
+	private int quantity;
+	private double unitPrice;
+	private double totalValuation;
+	private String shareType;
+}
+GET : /customerdetails/customerId
