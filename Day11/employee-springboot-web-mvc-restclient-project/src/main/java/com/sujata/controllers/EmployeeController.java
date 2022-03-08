@@ -1,5 +1,7 @@
 package com.sujata.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,6 +89,38 @@ public class EmployeeController {
 			message="Employee Added Succesfully";
 		else
 			message="Employee Addition Failed";
+		
+		modelAndView.addObject("message", message);
+		modelAndView.setViewName("output");
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping("/listAllEmployees")
+	public ModelAndView getAllEmployeesController() {
+		ModelAndView modelAndView=new ModelAndView();
+		
+		List<Employee> employees=employeeService.getAllEmployees();
+		modelAndView.addObject("employees", employees);
+		modelAndView.setViewName("showAllEmployees");
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping("/deleteEmployeePage")
+	public String deleteEmployeePageController() {
+		return "deleteEmployeePage";
+	}
+	
+	@RequestMapping("/deleteEmployee")
+	public ModelAndView deleteEmployeeController(@RequestParam("empId") int id) {
+		ModelAndView modelAndView=new ModelAndView();
+		
+		String message=null;
+		if(employeeService.deleteEmployeeById(id))
+			message="Employee Deleted Successfully";
+		else
+			message="Employee Deletion Failed";
 		
 		modelAndView.addObject("message", message);
 		modelAndView.setViewName("output");
