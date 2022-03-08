@@ -5,4 +5,5 @@ import com.sujata.entity.Employee;
 public interface EmployeeService {
 
 	public Employee getEmployeeById(int id);
+	public boolean saveEmployee(Employee employee);
 }
