@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Employee Management System</h1>
+<h2 style="color:blue" th:text="'Welcome '+${session.user.userName}+'!'"></h2>
+<h1>Employee Search</h1>
+
+<form action="./searchEmployee" method="post">
+	Enter Employee ID : <input type="text" name="empId"><br><br>
+	<input type="submit" value="Search">
+</form>
+<br><br>
+<a href="./menu">Go To Main Page</a>
+</body>
+</html>
