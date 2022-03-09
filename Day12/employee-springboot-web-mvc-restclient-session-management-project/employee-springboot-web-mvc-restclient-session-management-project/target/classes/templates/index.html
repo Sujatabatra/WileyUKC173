@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link th:href="@{/styles/main.css}" rel="stylesheet" />
+</head>
+<body>
+<h1>Employee Management System</h1>
+<h2 style="color:blue" th:text="'Welcome '+${session.user.userName}+'!'"></h2>
+<a href="./listAllEmployees">List All Employees</a><br><br>
+<a href="./searchEmployeePage">Search Employee By ID</a><br><br>
+<a href="./insertEmployeePage">Add New Employee</a><br><br>
+<a href="./deleteEmployeePage">Delete Employee By ID</a><br><br>
+<a href="./logout">Logout</a>
+</body>
+</html>
