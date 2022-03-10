@@ -1,5 +1,7 @@
 package com.sujata.demo;
 
+import java.util.function.UnaryOperator;
+
 @FunctionalInterface
 interface Greet{
 	public void wish();
@@ -13,6 +15,7 @@ interface Addition{
 	public int sum(int number1,int number2);
 }
 
+@FunctionalInterface
 interface Calculate{
 	public int factorial(int n);
 }
@@ -45,6 +48,15 @@ public class MyFirstDemoClass {
 		return factorial;};
 		
 		System.out.println(fOb.factorial(4));
+		
+		
+		UnaryOperator<Integer> fOb1=n->{ int factorial=1;
+		while(n>=1) {
+			factorial*=n--;
+		}
+		return factorial;};
+		
+		System.out.println(fOb1.apply(5));
 	}
 
 }
