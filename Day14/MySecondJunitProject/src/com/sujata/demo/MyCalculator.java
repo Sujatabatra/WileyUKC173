@@ -19,7 +19,10 @@ public class MyCalculator {
 	/*
 	 * addition of two positive integers
 	 */
-	public int sum(int number1,int number2) {
-		return 0;
+	public int sum(int number1,int number2)throws NegativeNumberException {
+		if(number1>=0 && number2>=0)
+			return number1+number2;
+		else
+			throw new NegativeNumberException("Negative Numbers not allowed");
 	}
 }
