@@ -16,11 +16,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 	private EmployeeDao employeeDao;
 	
 
-	public EmployeeServiceImpl(EmployeeDao employeeDao) {
-		super();
-		this.employeeDao = employeeDao;
-	}
-
 	@Override
 	public Employee getEmployeeById(int id) {
 
