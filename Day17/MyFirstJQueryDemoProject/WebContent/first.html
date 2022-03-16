@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	
+<script type="text/javascript">
+/*jQuery(selector).action(function())*/
+/*
+jQuery(document).ready(function(){
+	alert(jQuery("p").text());
+})*/
+/*
+$(document).ready(function(){
+	alert($("p").text())
+});
+*/
+function alertMessage(){
+	alert("Someone clicked the button")
+}
+
+$(document).ready(function(){
+		$("#btn1").click(alertMessage)
+	}
+	);
+/*$(document).ready(function(){
+	$("#btn1").click(function(){
+		alert("Someone clicked the button")
+	})
+})*/
+</script>
+</head>
+<body>
+	<p>Hello EveryOne</p>
+	
+	<div id="message"></div>
+	
+	<button id="btn1">Click</button>
+</body>
+</html>
