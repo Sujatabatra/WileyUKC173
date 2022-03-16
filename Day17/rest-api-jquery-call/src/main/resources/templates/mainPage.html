@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Project</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$("#search").click(function(){
+	$.ajax({
+		type:"GET",
+		url:"http://localhost:8085/employees/"+$("#empId").val(),
+		dataType:"json",
+		success:function(result,status,xhr){
+				var table=$("<table><tr><th>Employee Details</th></tr>");
+				table.append("<tr><td>Employee ID :</td><td>"+result["empId"]+"</td></tr>");
+				table.append("<tr><td>Employee Name :</td><td>"+result["empName"]+"</td></tr>");
+				table.append("<tr><td>Employee Department :</td><td>"+result["empDepartment"]+"</td></tr>");
+				table.append("<tr><td>Employee Designation :</td><td>"+result["empDesignation"]+"</td></tr>");
+				table.append("<tr><td>Employee Salary :</td><td>"+result["empSalary"]+"</td></tr></table>");
+				$("#message").html(table);
+			},
+		error: function(xhr,status,error){
+				alert("Result : "+status+" "+error+" "+xhr.status+"  "+xhr.statusText);
+			}
+			
+		})
+		})
+});
+
+$(document).ready(function(){
+	$("#getAll").click(function(){
+	$.ajax({
+		type:"GET",
+		url:"http://localhost:8085/employees",
+		dataType:"json",
+		success:function(result,status,xhr){
+				var table=$("<table><tr><th>Employee Details</th></tr>");
+				for(i=0;i<result.empList.length;i++){
+				table.append("<tr><td>Employee ID :</td><td>"+result["empList"][i]["empId"]+"</td></tr>");
+				table.append("<tr><td>Employee Name :</td><td>"+result["empList"][i]["empName"]+"</td></tr>");
+				table.append("<tr><td>Employee Department :</td><td>"+result["empList"][i]["empDepartment"]+"</td></tr>");
+				table.append("<tr><td>Employee Designation :</td><td>"+result["empList"][i]["empDesignation"]+"</td></tr>");
+				table.append("<tr><td>Employee Salary :</td><td>"+result["empList"][i]["empSalary"]+"</td></tr>");
+				}
+				table.append("</table>")
+				$("#message").html(table);
+			},
+		error: function(xhr,status,error){
+				alert("Result : "+status+" "+error+" "+xhr.status+"  "+xhr.statusText);
+			}
+			
+		})
+		})
+});
+</script>
+</head>
+<body>
+	Enter Employee ID
+	<input type="text" id="empId">
+	<br>
+	<br>
+	<button id="search">Search Employee</button>
+	<button id="getAll">Display All Employees</button>
+	<br>
+	<br>
+	<div id="message"></div>
+</body>
+</html>

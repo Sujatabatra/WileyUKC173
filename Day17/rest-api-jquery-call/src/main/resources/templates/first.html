@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn").click(function(){
+				var na=$("#name").val();
+				$("#message").text("Welcome "+na+" to the world of JQuery!")
+			})
+		});
+</script>
+</head>
+<body>
+Enter Your Name : <input type="text" id="name">
+<br><br>
+<div id="message">Hello EveryOne</div>
+<br><br>
+<button id="btn">Greet</button>
+
+</body>
+</html>
